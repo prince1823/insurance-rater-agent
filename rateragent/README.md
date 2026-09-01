@@ -9,6 +9,10 @@ an answer.
 
 Built for the Vaatun "Solve to Join" challenge.
 
+**Live:** frontend <https://insurance-rater-agent.vercel.app> · API <https://insurance-rater-agent-dyi0.onrender.com>
+(Render free tier sleeps when idle — the first request may take ~1 min to wake. Real PDF uploads
+need OpenRouter credit; the four bundled samples work regardless.)
+
 ---
 
 ## Results for the four supplied policies
