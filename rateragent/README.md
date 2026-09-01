@@ -192,14 +192,17 @@ committed rulepacks still match the source grids.
 > all four samples correctly. For a paid upgrade set `OPENROUTER_MODEL=openai/gpt-4o`. The
 > deterministic resolver and the `?fixture=` demo path work with no LLM at all.
 
+> The live instance is already wired to a Supabase project; these steps are for a fresh deploy.
+
 ### 1. Supabase (persistent storage)
 
 1. Create a project at <https://supabase.com>.
-2. **Storage → New bucket** → name `policy-pdfs` (private is fine).
-3. **Project Settings → Database → Connection string → URI** (port 5432) → this is
-   `DATABASE_URL`.
-4. **Project Settings → API** → copy `Project URL` (`SUPABASE_URL`) and the
-   `service_role` key (`SUPABASE_SERVICE_KEY`).
+2. **Storage → New bucket** → name it exactly `policy-pdfs` (private is fine).
+3. Click **Connect** (top bar) → **Session pooler** tab → copy the URI → replace
+   `[YOUR-PASSWORD]` with your DB password (URL-encode any special characters, e.g. `@` → `%40`).
+   That is `DATABASE_URL`. Use the *Session* pooler (port 5432), not Direct connection.
+4. **Project Settings → API Keys** → **Reveal** and copy the `service_role` key
+   (`SUPABASE_SERVICE_KEY`); `SUPABASE_URL` is `https://<project-ref>.supabase.co`.
 
 No migration step is needed — the backend calls `Base.metadata.create_all` on startup and
 creates the `runs` table.
@@ -213,8 +216,9 @@ creates the `runs` table.
    - **Runtime:** Docker · **Dockerfile Path:** `backend/Dockerfile`
    - **Environment variables:** `OPENROUTER_API_KEY`, `OPENROUTER_MODEL`,
      `DATABASE_URL`, `SUPABASE_URL`, `SUPABASE_SERVICE_KEY`, `SUPABASE_BUCKET=policy-pdfs`,
-     `CORS_ORIGINS=https://<your-vercel-app>.vercel.app`
-4. Deploy. Health check: `GET https://<service>.onrender.com/health`.
+     `CORS_ORIGINS` (`*`, or the exact Vercel origin)
+4. Deploy. Health check: `GET https://<service>.onrender.com/health` — expect
+   `"database":"postgres"`, `"storage":"supabase"`, `"diag":{"service_key_ok":true}`.
 
 ### 3. Frontend → Vercel
 
@@ -286,3 +290,28 @@ app degrades to a local SQLite file + local blob dir — used only for tests and
 - **GWP-slab incremental rules** (Tata AIG) are portfolio-level, not single-policy, and are
   explicitly out of scope; noted where encountered.
 - No auth, no rate-limiting, single shared history — fine for a review deployment.
+
+---
+
+## Deliverables checklist
+
+| Requirement | Where |
+|---|---|
+| Working app, publicly deployed | <https://insurance-rater-agent.vercel.app> (+ API on Render) |
+| Upload of policy PDFs beyond the 4 samples | `POST /analyze` multipart; drag-drop in the UI — verified live |
+| Document ingestion + information extraction | `backend/app/extraction/` (PyMuPDF render → OpenRouter vision → typed `PolicyFacts`) |
+| Identify + apply rating rules | `backend/app/resolver/*` + `backend/app/rulepacks/*.json` |
+| Final rate output (OD + TP, applicability) | `rates` in the output contract; ₹ amounts in `commission_amounts_inr` |
+| Decision traceability + source evidence | `trace[]` (ordered) + `citations[]` (`file · sheet!cell` / `file · page`) — rendered in the UI |
+| Missing / ambiguous handled explicitly | `status` = `unsupported` / `ambiguous`, `reason`, `candidates`, `clarifying_question` |
+| Persistent history (refresh / restart / redeploy) | Supabase Postgres + Storage; see *Storage & persistence* above |
+| Setup / run / deploy docs | this README + `backend/README.md` + `frontend/README.md` |
+| Automated tests (rating logic + storage boundary) | `backend/tests/` — 21 tests: `pytest -q` |
+| Structured outputs + traces for all 4 policies | `docs/traces/*.json` and `docs/traces/*.md` |
+| Architecture / assumptions / failure modes / trade-offs | *Architecture*, *Key design decisions*, *Assumptions*, *Known limitations* above |
+
+**Decision-trace links:**
+[HDFC ERGO](docs/traces/pvt-car-comprehensive-hdfc-ergo.md) ·
+[Reliance](docs/traces/pvt-car-comprehensive-reliance.md) ·
+[Go Digit](docs/traces/pvt-car-satp-go-digit.md) ·
+[Tata AIG](docs/traces/pvt-car-satp-tata-aig.md)
