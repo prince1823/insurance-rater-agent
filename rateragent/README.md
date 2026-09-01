@@ -10,8 +10,7 @@ an answer.
 Built for the Vaatun "Solve to Join" challenge.
 
 **Live:** frontend <https://insurance-rater-agent.vercel.app> · API <https://insurance-rater-agent-dyi0.onrender.com>
-(Render free tier sleeps when idle — the first request may take ~1 min to wake. Real PDF uploads
-need OpenRouter credit; the four bundled samples work regardless.)
+(Render free tier sleeps when idle — the first request may take ~1 min to wake.)
 
 ---
 
@@ -51,7 +50,7 @@ hard-coded. Regenerate the traces with `cd backend && python -m tools.gen_traces
 1. **Extraction (LLM, `backend/app/extraction/`)** — PDF pages are rasterised with PyMuPDF
    and sent to an OpenRouter vision model under a strict JSON contract. Every fact returns
    with a **page number, a verbatim snippet, and a self-reported confidence**. Model is
-   configurable (`OPENROUTER_MODEL`, default `openai/gpt-4o-mini`).
+   configurable (`OPENROUTER_MODEL`, default `minimax/minimax-m3:free` — a free vision model that extracted all four samples correctly).
 
 2. **Rate resolution (deterministic, `backend/app/resolver/`)** — a plain-Python pipeline,
    one module per insurer, that walks the compiled rulepack. Every lookup appends a
@@ -189,9 +188,9 @@ committed rulepacks still match the source grids.
 
 ## Deployment (Supabase + Render + Vercel — all free tier)
 
-> **OpenRouter credits:** `gpt-4o-mini` vision calls are not free. Add a few dollars of
-> credit at <https://openrouter.ai/settings/credits> or extraction returns `402 Payment
-> Required`. The deterministic resolver and the `?fixture=` demo path work without it.
+> **Model:** the default `minimax/minimax-m3:free` needs no OpenRouter credit and extracted
+> all four samples correctly. For a paid upgrade set `OPENROUTER_MODEL=openai/gpt-4o`. The
+> deterministic resolver and the `?fixture=` demo path work with no LLM at all.
 
 ### 1. Supabase (persistent storage)
 
@@ -253,8 +252,8 @@ app degrades to a local SQLite file + local blob dir — used only for tests and
 - **Confidence is surfaced, not hidden.** Weak extraction (`confidence < 0.55` on a driver
   fact) or an inferred fuel downgrades the result to `medium`/`low` with the reason spelled
   out — a wrong number is worse than an honest "medium".
-- **Configurable model.** `gpt-4o-mini` by default (as requested); raise to `openai/gpt-4o`
-  or `google/gemini-2.0-flash-001` via env if extraction accuracy on dense scans is low.
+- **Configurable model.** `minimax/minimax-m3:free` by default (free, correct on all four
+  samples); set `OPENROUTER_MODEL=openai/gpt-4o` for a paid, stronger model.
 
 ## Assumptions
 
@@ -281,9 +280,9 @@ app degrades to a local SQLite file + local blob dir — used only for tests and
 - **Segment classification** uses a small curated model table + CC/body heuristics; rare
   models fall back to candidate lists. An insurer-published make/model sheet (Reliance has
   one) could be wired in per insurer.
-- **Extraction quality** with `gpt-4o-mini` on dense multi-page scans is the main accuracy
-  risk; mitigated by confidence gating + the configurable model, but a self-consistency /
-  double-pass extraction and field-level re-prompting would help.
+- **Extraction quality** on dense multi-page scans is the main accuracy risk; mitigated by
+  confidence gating + the configurable model. A self-consistency / double-pass extraction and
+  field-level re-prompting would harden it further.
 - **GWP-slab incremental rules** (Tata AIG) are portfolio-level, not single-policy, and are
   explicitly out of scope; noted where encountered.
 - No auth, no rate-limiting, single shared history — fine for a review deployment.

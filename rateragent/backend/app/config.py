@@ -31,8 +31,10 @@ class Settings:
     openrouter_base_url: str = os.getenv(
         "OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"
     )
-    # Configurable per the plan; default gpt-4o-mini as requested.
-    openrouter_model: str = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
+    # Configurable via OPENROUTER_MODEL. Default is a free vision model that
+    # extracted all four sample policies correctly; set e.g. "openai/gpt-4o"
+    # (paid) if you want a stronger model.
+    openrouter_model: str = os.getenv("OPENROUTER_MODEL", "minimax/minimax-m3:free")
     extraction_dpi: int = int(os.getenv("EXTRACTION_DPI", "150"))
     max_pages: int = int(os.getenv("EXTRACTION_MAX_PAGES", "8"))
 

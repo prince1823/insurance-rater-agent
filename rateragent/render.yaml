@@ -9,7 +9,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: OPENROUTER_MODEL
-        value: openai/gpt-4o-mini
+        value: minimax/minimax-m3:free
       - key: SUPABASE_BUCKET
         value: policy-pdfs
       - key: OPENROUTER_API_KEY
