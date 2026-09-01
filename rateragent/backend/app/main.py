@@ -42,11 +42,7 @@ def health() -> dict:
         "database": "postgres" if settings.database_url else "sqlite",
         "diag": {
             "supabase_url_ok": settings.supabase_url.startswith("https://") and settings.supabase_url.endswith(".supabase.co"),
-            "service_key_len": len(k),
-            "service_key_ascii": k.isascii(),
-            "service_key_dots": k.count("."),
-            "service_key_head": k[:10],
-            "service_key_tail": k[-6:],
+            "service_key_ok": k.isascii() and k.count(".") == 2 and len(k) > 100,
         },
     }
 
