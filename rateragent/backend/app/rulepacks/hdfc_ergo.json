@@ -1,0 +1,306 @@
+{
+  "columns": [
+    "package_petrol",
+    "package_nonpetrol_ncb",
+    "package_nonpetrol_nncb",
+    "saod_petrol",
+    "saod_nonpetrol_ncb",
+    "saod_nonpetrol_nncb"
+  ],
+  "effective": "1st Feb'25",
+  "file": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+  "footnotes": [
+    {
+      "page": 1,
+      "text": "Slab will be calculated basis comprehensive + SAOD GWP on PVT CAR (SATP premium is excluded for slab achievement)"
+    },
+    {
+      "page": 1,
+      "text": "*Non Petrol includes Diesel, CNG, LPG"
+    },
+    {
+      "page": 1,
+      "text": "#New Business will be considered as NCB"
+    },
+    {
+      "page": 1,
+      "text": "# EV and Hybrid is to be considered in Petrol Grid"
+    }
+  ],
+  "insurer": "HDFC ERGO",
+  "insurer_aliases": [
+    "hdfc ergo",
+    "hdfc-ergo",
+    "hdfc ergo general insurance"
+  ],
+  "notes": [
+    "Grid publishes OD commission only (Package & SAOD columns). No third-party commission column exists; TP payout is treated as 0%."
+  ],
+  "rate_table_pages": {
+    "1": "page 1, 'Zone 1' table",
+    "2": "page 1, 'Zone 2' table"
+  },
+  "rate_tables": {
+    "1": {
+      "10k-50k": {
+        "package_nonpetrol_ncb": 19.5,
+        "package_nonpetrol_nncb": 12.0,
+        "package_petrol": 19.5,
+        "saod_nonpetrol_ncb": 16.0,
+        "saod_nonpetrol_nncb": 12.0,
+        "saod_petrol": 19.5
+      },
+      "1L-2L": {
+        "package_nonpetrol_ncb": 23.0,
+        "package_nonpetrol_nncb": 14.0,
+        "package_petrol": 23.0,
+        "saod_nonpetrol_ncb": 18.0,
+        "saod_nonpetrol_nncb": 14.0,
+        "saod_petrol": 23.0
+      },
+      "50k-1L": {
+        "package_nonpetrol_ncb": 21.0,
+        "package_nonpetrol_nncb": 13.0,
+        "package_petrol": 21.0,
+        "saod_nonpetrol_ncb": 17.0,
+        "saod_nonpetrol_nncb": 13.0,
+        "saod_petrol": 21.0
+      },
+      "<10k": {
+        "package_nonpetrol_ncb": 17.5,
+        "package_nonpetrol_nncb": 11.0,
+        "package_petrol": 17.5,
+        "saod_nonpetrol_ncb": 15.0,
+        "saod_nonpetrol_nncb": 11.0,
+        "saod_petrol": 17.5
+      },
+      ">2L": {
+        "package_nonpetrol_ncb": 25.0,
+        "package_nonpetrol_nncb": 15.0,
+        "package_petrol": 25.0,
+        "saod_nonpetrol_ncb": 20.0,
+        "saod_nonpetrol_nncb": 15.0,
+        "saod_petrol": 25.0
+      }
+    },
+    "2": {
+      "10k-50k": {
+        "package_nonpetrol_ncb": 17.5,
+        "package_nonpetrol_nncb": 10.0,
+        "package_petrol": 17.5,
+        "saod_nonpetrol_ncb": 12.0,
+        "saod_nonpetrol_nncb": 10.0,
+        "saod_petrol": 17.5
+      },
+      "1L-2L": {
+        "package_nonpetrol_ncb": 22.0,
+        "package_nonpetrol_nncb": 12.0,
+        "package_petrol": 22.0,
+        "saod_nonpetrol_ncb": 14.0,
+        "saod_nonpetrol_nncb": 10.5,
+        "saod_petrol": 22.0
+      },
+      "50k-1L": {
+        "package_nonpetrol_ncb": 20.0,
+        "package_nonpetrol_nncb": 12.0,
+        "package_petrol": 20.0,
+        "saod_nonpetrol_ncb": 13.0,
+        "saod_nonpetrol_nncb": 10.0,
+        "saod_petrol": 20.0
+      },
+      "<10k": {
+        "package_nonpetrol_ncb": 15.0,
+        "package_nonpetrol_nncb": 10.0,
+        "package_petrol": 15.0,
+        "saod_nonpetrol_ncb": 11.0,
+        "saod_nonpetrol_nncb": 10.0,
+        "saod_petrol": 15.0
+      },
+      ">2L": {
+        "package_nonpetrol_ncb": 23.0,
+        "package_nonpetrol_nncb": 12.5,
+        "package_petrol": 23.0,
+        "saod_nonpetrol_ncb": 15.0,
+        "saod_nonpetrol_nncb": 10.5,
+        "saod_petrol": 23.0
+      }
+    }
+  },
+  "slab_bounds": [
+    [
+      "<10k",
+      0,
+      10000
+    ],
+    [
+      "10k-50k",
+      10000,
+      50000
+    ],
+    [
+      "50k-1L",
+      50000,
+      100000
+    ],
+    [
+      "1L-2L",
+      100000,
+      200000
+    ],
+    [
+      ">2L",
+      200000,
+      null
+    ]
+  ],
+  "slabs": [
+    "<10k",
+    "10k-50k",
+    "50k-1L",
+    "1L-2L",
+    ">2L"
+  ],
+  "source_kind": "pdf",
+  "state_zone_map": {
+    "ANDHRA PRADESH": {
+      "default": 1,
+      "page": 1
+    },
+    "ARUNACHAL PRADESH": {
+      "default": 1,
+      "page": 1
+    },
+    "ASSAM": {
+      "default": 1,
+      "page": 1,
+      "zone2_regions": [
+        "Nagaon"
+      ]
+    },
+    "BIHAR": {
+      "default": 1,
+      "page": 1
+    },
+    "CHANDIGARH": {
+      "default": 2,
+      "page": 2
+    },
+    "CHHATTISGARH": {
+      "default": 2,
+      "page": 1
+    },
+    "DELHI": {
+      "default": 1,
+      "page": 2
+    },
+    "GOA": {
+      "default": 1,
+      "page": 1
+    },
+    "GUJARAT": {
+      "default": 2,
+      "page": 1,
+      "zone1_regions": [
+        "Ahmedabad",
+        "Dadra & Nagar Haveli",
+        "Daman",
+        "Vadodara"
+      ]
+    },
+    "HARYANA": {
+      "default": 2,
+      "page": 2
+    },
+    "HIMACHAL PRADESH": {
+      "default": 2,
+      "page": 2
+    },
+    "JAMMU AND KASHMIR": {
+      "default": 2,
+      "page": 2
+    },
+    "JHARKHAND": {
+      "default": 1,
+      "page": 1
+    },
+    "KARNATAKA": {
+      "default": 2,
+      "page": 1,
+      "zone1_regions": [
+        "Bangalore"
+      ]
+    },
+    "KERALA": {
+      "default": 2,
+      "page": 1
+    },
+    "MADHYA PRADESH": {
+      "default": 2,
+      "page": 2
+    },
+    "MAHARASHTRA": {
+      "default": 1,
+      "page": 1
+    },
+    "MANIPUR": {
+      "default": 1,
+      "page": 1
+    },
+    "MEGHALAYA": {
+      "default": 1,
+      "page": 1
+    },
+    "MIZORAM": {
+      "default": 2,
+      "page": 1
+    },
+    "NAGALAND": {
+      "default": 1,
+      "page": 1
+    },
+    "ODISHA": {
+      "default": 1,
+      "page": 1
+    },
+    "PUNJAB": {
+      "default": 2,
+      "page": 2
+    },
+    "RAJASTHAN": {
+      "default": 2,
+      "page": 2
+    },
+    "SIKKIM": {
+      "default": 1,
+      "page": 1
+    },
+    "TAMIL NADU": {
+      "default": 2,
+      "page": 1,
+      "zone1_regions": [
+        "Andamans"
+      ]
+    },
+    "TELANGANA": {
+      "default": 1,
+      "page": 1
+    },
+    "TRIPURA": {
+      "default": 1,
+      "page": 1
+    },
+    "UTTAR PRADESH": {
+      "default": 2,
+      "page": 2
+    },
+    "UTTARAKHAND": {
+      "default": 2,
+      "page": 2
+    },
+    "WEST BENGAL": {
+      "default": 1,
+      "page": 1
+    }
+  },
+  "state_zone_map_page": "page 1-2, 'Zone / State Name / Zone-1 / Zone-2' table"
+}

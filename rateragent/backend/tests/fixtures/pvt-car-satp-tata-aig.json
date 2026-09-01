@@ -1,0 +1,26 @@
+{
+  "_note": "Hand-verified extraction payload for the supplied Tata AIG stand-alone-TP sample.",
+  "insurer": {"value": "TATA AIG General Insurance Company Limited", "page": 1, "snippet": "TATA AIG GENERAL INSURANCE COMPANY LIMITED / Auto Secure - Liability Only Policy", "confidence": 0.99},
+  "previous_insurer": {"value": null, "page": null, "snippet": "no previous-insurer / previous-policy field printed on this schedule", "confidence": 0.0},
+  "business_type": {"value": null, "page": null, "snippet": "not stated; vehicle registered 02/11/2011 so it is not brand-new business", "confidence": 0.0},
+  "policy_type": {"value": "standalone_tp", "page": 1, "snippet": "Auto Secure - Liability Only Policy; Third-Party Cover only", "confidence": 0.98},
+  "make": {"value": "MARUTI", "page": 4, "snippet": "Make / Model / Variant MARUTI / ZEN ESTILO / LXI CNG", "confidence": 0.97},
+  "model": {"value": "ZEN ESTILO LXI CNG", "page": 4, "snippet": "MARUTI / ZEN ESTILO / LXI CNG", "confidence": 0.95},
+  "fuel": {"value": "cng", "page": 4, "snippet": "Fuel Type CNG", "confidence": 0.97},
+  "cc": {"value": 998, "page": 4, "snippet": "CC/KW 998", "confidence": 0.96},
+  "registration_number": {"value": "DL9CAB2893", "page": 4, "snippet": "Registration No. DL 9C AB 2893", "confidence": 0.9},
+  "rto_code": {"value": "DL-9C", "page": 4, "snippet": "Registration No. DL 9C AB 2893; RTO Location DELHI", "confidence": 0.92},
+  "rto_location": {"value": "DELHI", "page": 4, "snippet": "RTO Location DELHI; Zone A", "confidence": 0.96},
+  "manufacture_year": {"value": 2011, "page": 4, "snippet": "Mfg. Year 2011", "confidence": 0.95},
+  "registration_year": {"value": 2011, "page": 4, "snippet": "Date of Registration 02/11/2011", "confidence": 0.95},
+  "body_type": {"value": "HATCH BACK", "page": 4, "snippet": "Body Type HATCH BACK", "confidence": 0.95},
+  "seating_capacity": {"value": 5, "page": 4, "snippet": "Seating Capacity (Including Driver) 5", "confidence": 0.9},
+  "ncb_percent": {"value": null, "page": null, "snippet": "not applicable to a stand-alone TP policy", "confidence": 0.0},
+  "zero_depreciation": {"value": false, "page": null, "snippet": "", "confidence": 0.6},
+  "premium": {
+    "od_premium": {"value": null, "page": null, "snippet": "no Own Damage section (Liability Only policy)", "confidence": 0.0},
+    "tp_premium": {"value": 2094, "page": 5, "snippet": "Basic TP premium 2094", "confidence": 0.95},
+    "net_premium": {"value": 2154, "page": 5, "snippet": "Net Premium (B) 2154", "confidence": 0.92},
+    "total_premium": {"value": 2542, "page": 5, "snippet": "Total Policy Premium 2542", "confidence": 0.92}
+  }
+}

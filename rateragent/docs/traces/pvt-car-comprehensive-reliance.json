@@ -1,0 +1,340 @@
+{
+  "status": "resolved",
+  "insurer": "Reliance",
+  "grid_file": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+  "policy_type": "comprehensive",
+  "business_type": "unknown",
+  "facts": {
+    "insurer": {
+      "field": "insurer",
+      "value": "Reliance General Insurance Company Limited",
+      "page": 2,
+      "snippet": "Reliance Private Car Package Policy- Schedule",
+      "confidence": 0.99
+    },
+    "previous_insurer": {
+      "field": "previous insurer",
+      "value": null,
+      "page": null,
+      "snippet": "no previous-insurer field printed on the schedule",
+      "confidence": 0.0
+    },
+    "business_type": {
+      "field": "business type",
+      "value": "unknown",
+      "derivation": "same insurer current & previous => renewal; different named previous => rollover"
+    },
+    "policy_type": {
+      "field": "policy type",
+      "value": "comprehensive"
+    },
+    "make": {
+      "field": "make",
+      "value": "RENAULT",
+      "page": 2,
+      "snippet": "Make / Model / Variant RENAULT KWID 1.0 RXT O",
+      "confidence": 0.97
+    },
+    "model": {
+      "field": "model",
+      "value": "KWID 1.0 RXT O",
+      "page": 2,
+      "snippet": "RENAULT KWID 1.0 RXT O",
+      "confidence": 0.95
+    },
+    "fuel": {
+      "field": "fuel",
+      "value": "petrol",
+      "page": null,
+      "snippet": "fuel not explicitly printed; Renault Kwid 1.0 is petrol and CNG/LPG Kit value is 0.00",
+      "confidence": 0.6,
+      "normalised": "petrol"
+    },
+    "cc": {
+      "field": "engine cc",
+      "value": 999,
+      "page": 2,
+      "snippet": "CC / HP 999",
+      "confidence": 0.97
+    },
+    "rto_code": {
+      "field": "RTO code",
+      "value": "UP-16",
+      "page": 2,
+      "snippet": "RTO Location UTTAR PRADESH - Noida; Registration No. UP16CS5830",
+      "confidence": 0.9,
+      "normalised": "UP-16"
+    },
+    "rto_location": {
+      "field": "RTO location",
+      "value": "UTTAR PRADESH - Noida",
+      "page": 2,
+      "snippet": "RTO Location UTTAR PRADESH - Noida",
+      "confidence": 0.95
+    },
+    "manufacture_year": {
+      "field": "manufacture year",
+      "value": 2020,
+      "page": 2,
+      "snippet": "Mfg. Month & Year OCT-2020",
+      "confidence": 0.95
+    },
+    "registration_year": {
+      "field": "registration year",
+      "value": null,
+      "page": null,
+      "snippet": "",
+      "confidence": 0.0
+    },
+    "vehicle_age_years": {
+      "field": "vehicle age (years)",
+      "value": 6
+    },
+    "ncb_percent": {
+      "field": "NCB %",
+      "value": 25,
+      "page": 2,
+      "snippet": "Less Deduct 25 % for NCB -350.01",
+      "confidence": 0.95
+    },
+    "zero_depreciation": {
+      "field": "zero depreciation cover",
+      "value": true,
+      "page": 2,
+      "snippet": "Nil Depreciation listed under Add on Cover/s Opted",
+      "confidence": 0.85
+    },
+    "premium_breakup": {
+      "od_premium": {
+        "field": "OD premium",
+        "value": 4714,
+        "page": 2,
+        "snippet": "TOTAL OWN DAMAGE PREMIUM 4,714.00",
+        "confidence": 0.9
+      },
+      "tp_premium": {
+        "field": "TP premium",
+        "value": 2094,
+        "page": 2,
+        "snippet": "Basic Liability (TPPD 1) 2,094.00",
+        "confidence": 0.92
+      },
+      "net_premium": {
+        "field": "net premium",
+        "value": 7233,
+        "page": 2,
+        "snippet": "TOTAL PACKAGE PREMIUM (Sec I + II + III) 7,233.00",
+        "confidence": 0.85
+      },
+      "total_premium": {
+        "field": "total premium (incl GST)",
+        "value": 8535,
+        "page": 2,
+        "snippet": "TOTAL PREMIUM PAYABLE 8,535.00",
+        "confidence": 0.9
+      }
+    }
+  },
+  "rates": {
+    "od": {
+      "applicable": true,
+      "percent": 17.5,
+      "basis": "OD premium",
+      "note": "CC 999 < 1000: −5 points (Payout for < 1000 CC, PO will be 5% lesser than the above Grid); Policy carries Zero-Depreciation cover. Footnote 'Standlone ZD policies 2.5%will be redused from the above Grid' reduces the rate by 2.5 points only for *stand-alone ZD* policies; this is a package policy with ZD as an add-on, so no reduction is applied."
+    },
+    "tp": {
+      "applicable": true,
+      "percent": 0.0,
+      "basis": "TP / net premium",
+      "note": "package policy; Reliance STP column applies to the TP component"
+    }
+  },
+  "commission_amounts_inr": {
+    "od": 824.95,
+    "tp": 0.0
+  },
+  "confidence": {
+    "level": "medium",
+    "reason": "fuel type not printed on the schedule; inferred from make/model"
+  },
+  "reason": "",
+  "clarifying_question": null,
+  "candidates": [],
+  "citations": [
+    {
+      "source": "pvt-car-comprehensive-reliance.pdf",
+      "locator": "page 2",
+      "kind": "policy",
+      "value": "UP-16",
+      "note": "RTO Location UTTAR PRADESH - Noida; Registration No. UP16CS5830"
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "RTO List!E1253",
+      "kind": "xlsx",
+      "value": "NORTH",
+      "note": ""
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "RTO List!C1253",
+      "kind": "xlsx",
+      "value": "Delhi",
+      "note": ""
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!B11",
+      "kind": "xlsx",
+      "value": "Delhi",
+      "note": ""
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!C11",
+      "kind": "xlsx",
+      "value": 22.5,
+      "note": ""
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!H3",
+      "kind": "xlsx",
+      "value": null,
+      "note": "Payout for < 1000 CC, PO will be 5% lesser than the above Grid"
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!F11",
+      "kind": "xlsx",
+      "value": 0,
+      "note": ""
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!H2",
+      "kind": "xlsx",
+      "value": null,
+      "note": "payout will made on OD Premium"
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!H4",
+      "kind": "xlsx",
+      "value": null,
+      "note": "Standlone ZD policies 2.5%will be redused from the above Grid"
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!H5",
+      "kind": "xlsx",
+      "value": null,
+      "note": "EW of Pvivate car will be Flat 20% Payout"
+    },
+    {
+      "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+      "locator": "PRIVATE CAR COMP, SAOD & STP!H6",
+      "kind": "xlsx",
+      "value": null,
+      "note": "Addon Bundle (Tyre / RTI) if Sourced, 2.5% Additional Payout Shall be offered"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "title": "Map RTO code to Reliance zone",
+      "detail": "RTO UP-16 -> region city 'Delhi', zone 'NORTH' via the 'RTO List' sheet.",
+      "citations": [
+        {
+          "source": "pvt-car-comprehensive-reliance.pdf",
+          "locator": "page 2",
+          "kind": "policy",
+          "value": "UP-16",
+          "note": "RTO Location UTTAR PRADESH - Noida; Registration No. UP16CS5830"
+        },
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "RTO List!E1253",
+          "kind": "xlsx",
+          "value": "NORTH",
+          "note": ""
+        },
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "RTO List!C1253",
+          "kind": "xlsx",
+          "value": "Delhi",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Select the Zone x region rate row",
+      "detail": "Zone 'NORTH' + region 'Delhi' -> grid row 'Delhi' (row 11).",
+      "citations": [
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "PRIVATE CAR COMP, SAOD & STP!B11",
+          "kind": "xlsx",
+          "value": "Delhi",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Read the base OD commission",
+      "detail": "Fuel 'petrol', comprehensive -> Petrol/Bifuel comprehensive column (C) = 22.5 -> 22.5%.",
+      "citations": [
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "PRIVATE CAR COMP, SAOD & STP!C11",
+          "kind": "xlsx",
+          "value": 22.5,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Apply < 1000 cc footnote",
+      "detail": "Engine 999 cc < 1000 -> subtract 5 points: 22.5% -> 17.5%.",
+      "citations": [
+        {
+          "source": "pvt-car-comprehensive-reliance.pdf",
+          "locator": "page 2",
+          "kind": "policy",
+          "value": 999,
+          "note": "CC / HP 999"
+        },
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "PRIVATE CAR COMP, SAOD & STP!H3",
+          "kind": "xlsx",
+          "value": null,
+          "note": "Payout for < 1000 CC, PO will be 5% lesser than the above Grid"
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "title": "Read TP (STP) rate",
+      "detail": "STP column = 0 -> 0.0% on the TP component.",
+      "citations": [
+        {
+          "source": "Reliance Broking Premier  FEB 26 Grid.xlsx",
+          "locator": "PRIVATE CAR COMP, SAOD & STP!F11",
+          "kind": "xlsx",
+          "value": 0,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "extraction": {
+    "model": "fixture (hand-verified)",
+    "notes": [],
+    "source_file": "pvt-car-comprehensive-reliance.pdf"
+  }
+}

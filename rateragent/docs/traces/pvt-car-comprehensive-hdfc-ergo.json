@@ -1,0 +1,291 @@
+{
+  "status": "resolved",
+  "insurer": "HDFC ERGO",
+  "grid_file": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+  "policy_type": "comprehensive",
+  "business_type": "rollover",
+  "facts": {
+    "insurer": {
+      "field": "insurer",
+      "value": "HDFC ERGO General Insurance Company Limited",
+      "page": 1,
+      "snippet": "HDFC ERGO General Insurance Company Limited / PRIVATE CAR COMPREHENSIVE POLICY",
+      "confidence": 0.99
+    },
+    "previous_insurer": {
+      "field": "previous insurer",
+      "value": "TATA AIG GENERAL INSURANCE CO.LTD.",
+      "page": 1,
+      "snippet": "Previous Policy No. ... Valid 29/03/2025 to 28/03/2026 of TATA AIG GENERAL INSURANCE CO.LTD.",
+      "confidence": 0.95
+    },
+    "business_type": {
+      "field": "business type",
+      "value": "rollover",
+      "derivation": "same insurer current & previous => renewal; different named previous => rollover"
+    },
+    "policy_type": {
+      "field": "policy type",
+      "value": "comprehensive"
+    },
+    "make": {
+      "field": "make",
+      "value": "MAHINDRA",
+      "page": 1,
+      "snippet": "Make MAHINDRA",
+      "confidence": 0.99
+    },
+    "model": {
+      "field": "model",
+      "value": "BOLERO NEO-N10 (R)",
+      "page": 1,
+      "snippet": "Model BOLERO NEO-N10 (R)",
+      "confidence": 0.98
+    },
+    "fuel": {
+      "field": "fuel",
+      "value": "diesel",
+      "page": null,
+      "snippet": "fuel type not printed on the schedule; Mahindra Bolero Neo is a diesel-only model",
+      "confidence": 0.5,
+      "normalised": "diesel"
+    },
+    "cc": {
+      "field": "engine cc",
+      "value": 1493,
+      "page": 1,
+      "snippet": "Cubic Capacity /Watts 1493",
+      "confidence": 0.98
+    },
+    "rto_code": {
+      "field": "RTO code",
+      "value": "HR-26",
+      "page": 1,
+      "snippet": "Registration No HR-26-FB-8239 / RTO GURGAON",
+      "confidence": 0.92,
+      "normalised": "HR-26"
+    },
+    "rto_location": {
+      "field": "RTO location",
+      "value": "GURGAON",
+      "page": 1,
+      "snippet": "RTO GURGAON",
+      "confidence": 0.97
+    },
+    "manufacture_year": {
+      "field": "manufacture year",
+      "value": 2023,
+      "page": 1,
+      "snippet": "Year of Manufacture 2023",
+      "confidence": 0.97
+    },
+    "registration_year": {
+      "field": "registration year",
+      "value": null,
+      "page": null,
+      "snippet": "",
+      "confidence": 0.0
+    },
+    "vehicle_age_years": {
+      "field": "vehicle age (years)",
+      "value": 3
+    },
+    "ncb_percent": {
+      "field": "NCB %",
+      "value": 25,
+      "page": 1,
+      "snippet": "NCB 25% in the summary box; the OD premium calculation line shows 'No Claim Bonus (35%)' -- figures disagree",
+      "confidence": 0.5
+    },
+    "zero_depreciation": {
+      "field": "zero depreciation cover",
+      "value": true,
+      "page": 1,
+      "snippet": "Zero Depreciation (IRDAN125A0021V01201415) 1853 under Add on Coverages",
+      "confidence": 0.95
+    },
+    "premium_breakup": {
+      "od_premium": {
+        "field": "OD premium",
+        "value": 8053,
+        "page": 1,
+        "snippet": "Net Own Damage Premium (a) 8053",
+        "confidence": 0.95
+      },
+      "tp_premium": {
+        "field": "TP premium",
+        "value": 3416,
+        "page": 1,
+        "snippet": "Basic Third Party Liability 3416",
+        "confidence": 0.95
+      },
+      "net_premium": {
+        "field": "net premium",
+        "value": 11869,
+        "page": 1,
+        "snippet": "Total Package Premium (a+b) 11869",
+        "confidence": 0.9
+      },
+      "total_premium": {
+        "field": "total premium (incl GST)",
+        "value": 14005,
+        "page": 1,
+        "snippet": "Total Premium 14005",
+        "confidence": 0.9
+      }
+    }
+  },
+  "rates": {
+    "od": {
+      "applicable": true,
+      "percent": 15.0,
+      "basis": "OD premium",
+      "note": ""
+    },
+    "tp": {
+      "applicable": true,
+      "percent": 0.0,
+      "basis": "TP premium",
+      "note": "HDFC ERGO Private Car grid has no third-party commission column; TP payout is 0%."
+    }
+  },
+  "commission_amounts_inr": {
+    "od": 1207.95,
+    "tp": 0.0
+  },
+  "confidence": {
+    "level": "medium",
+    "reason": "low-confidence extraction for: fuel; fuel type not printed on the schedule; inferred from make/model"
+  },
+  "reason": "",
+  "clarifying_question": null,
+  "candidates": [],
+  "citations": [
+    {
+      "source": "pvt-car-comprehensive-hdfc-ergo.pdf",
+      "locator": "page 1",
+      "kind": "policy",
+      "value": "HR-26",
+      "note": "Registration No HR-26-FB-8239 / RTO GURGAON"
+    },
+    {
+      "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "locator": "page 1-2, 'Zone / State Name / Zone-1 / Zone-2' table",
+      "kind": "pdf",
+      "value": "2",
+      "note": "state Haryana, page 2"
+    },
+    {
+      "source": "pvt-car-comprehensive-hdfc-ergo.pdf",
+      "locator": "policy schedule",
+      "kind": "policy",
+      "value": null,
+      "note": ""
+    },
+    {
+      "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "locator": "page 1, slab column",
+      "kind": "pdf",
+      "value": "<10k",
+      "note": ""
+    },
+    {
+      "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "locator": "page 1, 'Zone 2' table, row '<10k', column 'package_nonpetrol_ncb'",
+      "kind": "pdf",
+      "value": 15.0,
+      "note": ""
+    },
+    {
+      "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "locator": "page 1 (no TP column present)",
+      "kind": "pdf",
+      "value": 0.0,
+      "note": ""
+    },
+    {
+      "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+      "locator": "page 1",
+      "kind": "pdf",
+      "value": null,
+      "note": "Slab will be calculated basis comprehensive + SAOD GWP on PVT CAR (SATP premium is excluded for slab achievement)"
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "title": "Map RTO to HDFC ERGO zone",
+      "detail": "RTO HR-26 -> Haryana -> Zone 2 (state 'Haryana' default zone 2).",
+      "citations": [
+        {
+          "source": "pvt-car-comprehensive-hdfc-ergo.pdf",
+          "locator": "page 1",
+          "kind": "policy",
+          "value": "HR-26",
+          "note": "Registration No HR-26-FB-8239 / RTO GURGAON"
+        },
+        {
+          "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "locator": "page 1-2, 'Zone / State Name / Zone-1 / Zone-2' table",
+          "kind": "pdf",
+          "value": "2",
+          "note": "state Haryana, page 2"
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Select premium slab",
+      "detail": "OD GWP ₹8,053 -> slab '<10k'.",
+      "citations": [
+        {
+          "source": "pvt-car-comprehensive-hdfc-ergo.pdf",
+          "locator": "policy schedule",
+          "kind": "policy",
+          "value": null,
+          "note": ""
+        },
+        {
+          "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "locator": "page 1, slab column",
+          "kind": "pdf",
+          "value": "<10k",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Read the OD commission cell",
+      "detail": "Zone 2, slab '<10k', Non-Petrol (NCB) column (footnote: Non-Petrol = Diesel/CNG/LPG) -> 15.0%.",
+      "citations": [
+        {
+          "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "locator": "page 1, 'Zone 2' table, row '<10k', column 'package_nonpetrol_ncb'",
+          "kind": "pdf",
+          "value": 15.0,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "title": "Third-party commission",
+      "detail": "The HDFC ERGO Pvt Car grid publishes Package/SAOD (OD) rates only; TP = 0%.",
+      "citations": [
+        {
+          "source": "Pvt Car New Grid Eff 1st Feb'25 (HDFC ergo) 1.pdf",
+          "locator": "page 1 (no TP column present)",
+          "kind": "pdf",
+          "value": 0.0,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "extraction": {
+    "model": "fixture (hand-verified)",
+    "notes": [],
+    "source_file": "pvt-car-comprehensive-hdfc-ergo.pdf"
+  }
+}

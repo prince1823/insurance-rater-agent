@@ -1,0 +1,26 @@
+{
+  "_note": "Hand-verified extraction payload for the supplied Go Digit stand-alone-TP sample.",
+  "insurer": {"value": "Go Digit General Insurance Ltd.", "page": 1, "snippet": "Go Digit General Insurance Ltd. / Digit Private Car Liability Only Policy", "confidence": 0.99},
+  "previous_insurer": {"value": "Go Digit General Insurance Limited", "page": 2, "snippet": "Previous Insurer  Go Digit General Insurance Limited", "confidence": 0.97},
+  "business_type": {"value": "renewal", "page": 2, "snippet": "Previous Insurer is Go Digit -- same as current insurer -> renewal", "confidence": 0.9},
+  "policy_type": {"value": "standalone_tp", "page": 1, "snippet": "Digit Private Car Liability Only Policy; only Liability Premium section present", "confidence": 0.98},
+  "make": {"value": "HYUNDAI", "page": 1, "snippet": "Make HYUNDAI", "confidence": 0.99},
+  "model": {"value": "SANTRO NEW/1.1MT CORPORATE", "page": 1, "snippet": "Model/Vehicle Variant (Sub-Type) SANTRO NEW/1.1MT CORPORATE", "confidence": 0.95},
+  "fuel": {"value": "petrol", "page": 1, "snippet": "Fuel Type Petrol", "confidence": 0.98},
+  "cc": {"value": 1086, "page": 1, "snippet": "Cubic Capacity 1086 CC", "confidence": 0.97},
+  "registration_number": {"value": "UP78FZ1372", "page": 1, "snippet": "Vehicle Registration No. UP78FZ1372", "confidence": 0.9},
+  "rto_code": {"value": "UP-78", "page": 1, "snippet": "RTO Location Kanpur Nagar,UTTAR PRADESH; Registration UP78FZ1372", "confidence": 0.92},
+  "rto_location": {"value": "Kanpur Nagar,UTTAR PRADESH", "page": 1, "snippet": "RTO Location Kanpur Nagar,UTTAR PRADESH", "confidence": 0.95},
+  "manufacture_year": {"value": null, "page": 1, "snippet": "Year of Mfg. 0001-01-01 (invalid placeholder)", "confidence": 0.1},
+  "registration_year": {"value": 2019, "page": 1, "snippet": "Year of Regn. 2019", "confidence": 0.95},
+  "body_type": {"value": null, "page": null, "snippet": "", "confidence": 0.0},
+  "seating_capacity": {"value": 5, "page": 1, "snippet": "Seating Capacity 5", "confidence": 0.9},
+  "ncb_percent": {"value": null, "page": null, "snippet": "not applicable to a stand-alone TP policy", "confidence": 0.0},
+  "zero_depreciation": {"value": false, "page": null, "snippet": "", "confidence": 0.6},
+  "premium": {
+    "od_premium": {"value": null, "page": null, "snippet": "no Own Damage section (Liability Only policy)", "confidence": 0.0},
+    "tp_premium": {"value": 3416, "page": 2, "snippet": "Basic Third-Party Liability 3416.00", "confidence": 0.95},
+    "net_premium": {"value": 3466, "page": 2, "snippet": "Net Premium 3466.00", "confidence": 0.9},
+    "total_premium": {"value": 4089.88, "page": 2, "snippet": "Final Premium 4089.88", "confidence": 0.9}
+  }
+}

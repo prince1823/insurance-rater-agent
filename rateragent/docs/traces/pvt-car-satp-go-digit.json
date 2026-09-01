@@ -1,0 +1,262 @@
+{
+  "status": "resolved",
+  "insurer": "Go Digit",
+  "grid_file": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+  "policy_type": "standalone_tp",
+  "business_type": "renewal",
+  "facts": {
+    "insurer": {
+      "field": "insurer",
+      "value": "Go Digit General Insurance Ltd.",
+      "page": 1,
+      "snippet": "Go Digit General Insurance Ltd. / Digit Private Car Liability Only Policy",
+      "confidence": 0.99
+    },
+    "previous_insurer": {
+      "field": "previous insurer",
+      "value": "Go Digit General Insurance Limited",
+      "page": 2,
+      "snippet": "Previous Insurer  Go Digit General Insurance Limited",
+      "confidence": 0.97
+    },
+    "business_type": {
+      "field": "business type",
+      "value": "renewal",
+      "derivation": "same insurer current & previous => renewal; different named previous => rollover"
+    },
+    "policy_type": {
+      "field": "policy type",
+      "value": "standalone_tp"
+    },
+    "make": {
+      "field": "make",
+      "value": "HYUNDAI",
+      "page": 1,
+      "snippet": "Make HYUNDAI",
+      "confidence": 0.99
+    },
+    "model": {
+      "field": "model",
+      "value": "SANTRO NEW/1.1MT CORPORATE",
+      "page": 1,
+      "snippet": "Model/Vehicle Variant (Sub-Type) SANTRO NEW/1.1MT CORPORATE",
+      "confidence": 0.95
+    },
+    "fuel": {
+      "field": "fuel",
+      "value": "petrol",
+      "page": 1,
+      "snippet": "Fuel Type Petrol",
+      "confidence": 0.98,
+      "normalised": "petrol"
+    },
+    "cc": {
+      "field": "engine cc",
+      "value": 1086,
+      "page": 1,
+      "snippet": "Cubic Capacity 1086 CC",
+      "confidence": 0.97
+    },
+    "rto_code": {
+      "field": "RTO code",
+      "value": "UP-78",
+      "page": 1,
+      "snippet": "RTO Location Kanpur Nagar,UTTAR PRADESH; Registration UP78FZ1372",
+      "confidence": 0.92,
+      "normalised": "UP-78"
+    },
+    "rto_location": {
+      "field": "RTO location",
+      "value": "Kanpur Nagar,UTTAR PRADESH",
+      "page": 1,
+      "snippet": "RTO Location Kanpur Nagar,UTTAR PRADESH",
+      "confidence": 0.95
+    },
+    "manufacture_year": {
+      "field": "manufacture year",
+      "value": null,
+      "page": 1,
+      "snippet": "Year of Mfg. 0001-01-01 (invalid placeholder)",
+      "confidence": 0.1
+    },
+    "registration_year": {
+      "field": "registration year",
+      "value": 2019,
+      "page": 1,
+      "snippet": "Year of Regn. 2019",
+      "confidence": 0.95
+    },
+    "vehicle_age_years": {
+      "field": "vehicle age (years)",
+      "value": 7
+    },
+    "ncb_percent": {
+      "field": "NCB %",
+      "value": null,
+      "page": null,
+      "snippet": "not applicable to a stand-alone TP policy",
+      "confidence": 0.0
+    },
+    "zero_depreciation": {
+      "field": "zero depreciation cover",
+      "value": false,
+      "page": null,
+      "snippet": "",
+      "confidence": 0.6
+    },
+    "premium_breakup": {
+      "od_premium": {
+        "field": "OD premium",
+        "value": null,
+        "page": null,
+        "snippet": "no Own Damage section (Liability Only policy)",
+        "confidence": 0.0
+      },
+      "tp_premium": {
+        "field": "TP premium",
+        "value": 3416,
+        "page": 2,
+        "snippet": "Basic Third-Party Liability 3416.00",
+        "confidence": 0.95
+      },
+      "net_premium": {
+        "field": "net premium",
+        "value": 3466,
+        "page": 2,
+        "snippet": "Net Premium 3466.00",
+        "confidence": 0.9
+      },
+      "total_premium": {
+        "field": "total premium (incl GST)",
+        "value": 4089.88,
+        "page": 2,
+        "snippet": "Final Premium 4089.88",
+        "confidence": 0.9
+      }
+    }
+  },
+  "rates": {
+    "od": {
+      "applicable": false,
+      "percent": null,
+      "basis": "",
+      "note": "stand-alone TP policy: no OD component"
+    },
+    "tp": {
+      "applicable": true,
+      "percent": 29.5,
+      "basis": "TP / net premium",
+      "note": ""
+    }
+  },
+  "commission_amounts_inr": {
+    "tp": 1022.47
+  },
+  "confidence": {
+    "level": "high",
+    "reason": "all driver facts extracted with high confidence and matched grid keys exactly"
+  },
+  "reason": "",
+  "clarifying_question": null,
+  "candidates": [],
+  "citations": [
+    {
+      "source": "pvt-car-satp-go-digit.pdf",
+      "locator": "page 1",
+      "kind": "policy",
+      "value": "UP-78",
+      "note": "RTO Location Kanpur Nagar,UTTAR PRADESH; Registration UP78FZ1372"
+    },
+    {
+      "source": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+      "locator": "4W  RTO!C1609",
+      "kind": "xlsx",
+      "value": "UP_Bad",
+      "note": ""
+    },
+    {
+      "source": "pvt-car-satp-go-digit.pdf",
+      "locator": "policy schedule",
+      "kind": "policy",
+      "value": null,
+      "note": ""
+    },
+    {
+      "source": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+      "locator": "4W SATP!E293",
+      "kind": "xlsx",
+      "value": 0.295,
+      "note": ""
+    }
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "title": "Map RTO code to Go Digit TP cluster",
+      "detail": "RTO UP-78 -> TP cluster 'UP_Bad' via the '4W  RTO' sheet (4WTP column).",
+      "citations": [
+        {
+          "source": "pvt-car-satp-go-digit.pdf",
+          "locator": "page 1",
+          "kind": "policy",
+          "value": "UP-78",
+          "note": "RTO Location Kanpur Nagar,UTTAR PRADESH; Registration UP78FZ1372"
+        },
+        {
+          "source": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "locator": "4W  RTO!C1609",
+          "kind": "xlsx",
+          "value": "UP_Bad",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 2,
+      "title": "Select Cluster x Segment x Age row",
+      "detail": "Cluster 'UP_Bad', segment 'Petrol>1000' (fuel petrol, 1086 cc), age band 'All' (vehicle age 7) -> row 293.",
+      "citations": [
+        {
+          "source": "pvt-car-satp-go-digit.pdf",
+          "locator": "page 1",
+          "kind": "policy",
+          "value": 1086,
+          "note": "Cubic Capacity 1086 CC"
+        },
+        {
+          "source": "pvt-car-satp-go-digit.pdf",
+          "locator": "policy schedule",
+          "kind": "policy",
+          "value": null,
+          "note": ""
+        },
+        {
+          "source": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "locator": "4W SATP!E293",
+          "kind": "xlsx",
+          "value": 0.295,
+          "note": ""
+        }
+      ]
+    },
+    {
+      "step": 3,
+      "title": "Return TP commission",
+      "detail": "'Max CD2' = 0.295 -> 29.5% on the TP (net) premium. OD is not applicable for a stand-alone TP policy.",
+      "citations": [
+        {
+          "source": "Large Insurance Brokers Mar'26 - Shared.xlsx",
+          "locator": "4W SATP!E293",
+          "kind": "xlsx",
+          "value": 0.295,
+          "note": ""
+        }
+      ]
+    }
+  ],
+  "extraction": {
+    "model": "fixture (hand-verified)",
+    "notes": [],
+    "source_file": "pvt-car-satp-go-digit.pdf"
+  }
+}

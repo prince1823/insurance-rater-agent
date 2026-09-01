@@ -1,0 +1,24 @@
+# Render Blueprint. Set secret env vars in the dashboard after first deploy.
+services:
+  - type: web
+    name: insurance-rater-agent
+    runtime: docker
+    rootDir: rateragent
+    dockerfilePath: backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: OPENROUTER_MODEL
+        value: openai/gpt-4o-mini
+      - key: SUPABASE_BUCKET
+        value: policy-pdfs
+      - key: OPENROUTER_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false

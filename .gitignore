@@ -1,0 +1,16 @@
+.venv/
+scratch_imgs/
+__pycache__/
+*.pyc
+.env
+.env.local
+node_modules/
+dist/
+.DS_Store
+*.egg-info/
+.pytest_cache/
+backend/local.db
+blobs/
+local.db
+*.db
+blobs/

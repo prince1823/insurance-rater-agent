@@ -1,0 +1,25 @@
+# Local dev: Postgres + backend. Frontend runs separately with `npm run dev`.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_PASSWORD: rater
+      POSTGRES_DB: rater
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://postgres:rater@db:5432/rater
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      OPENROUTER_MODEL: ${OPENROUTER_MODEL:-openai/gpt-4o-mini}
+      CORS_ORIGINS: http://localhost:5173
+      LOCAL_BLOB_DIR: /data/blobs
+    ports: ["8000:8000"]
+    depends_on: [db]
+
+volumes:
+  pgdata:

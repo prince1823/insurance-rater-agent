@@ -1,0 +1,26 @@
+{
+  "_note": "Hand-verified extraction payload for the supplied HDFC ERGO comprehensive sample. Used as a golden fixture; not a hard-coded rate answer.",
+  "insurer": {"value": "HDFC ERGO General Insurance Company Limited", "page": 1, "snippet": "HDFC ERGO General Insurance Company Limited / PRIVATE CAR COMPREHENSIVE POLICY", "confidence": 0.99},
+  "previous_insurer": {"value": "TATA AIG GENERAL INSURANCE CO.LTD.", "page": 1, "snippet": "Previous Policy No. ... Valid 29/03/2025 to 28/03/2026 of TATA AIG GENERAL INSURANCE CO.LTD.", "confidence": 0.95},
+  "business_type": {"value": null, "page": null, "snippet": "not explicitly stated; previous insurer differs from current", "confidence": 0.0},
+  "policy_type": {"value": "comprehensive", "page": 1, "snippet": "PRIVATE CAR COMPREHENSIVE POLICY; both Own Damage Premium and Liability Premium sections present", "confidence": 0.98},
+  "make": {"value": "MAHINDRA", "page": 1, "snippet": "Make MAHINDRA", "confidence": 0.99},
+  "model": {"value": "BOLERO NEO-N10 (R)", "page": 1, "snippet": "Model BOLERO NEO-N10 (R)", "confidence": 0.98},
+  "fuel": {"value": "diesel", "page": null, "snippet": "fuel type not printed on the schedule; Mahindra Bolero Neo is a diesel-only model", "confidence": 0.5},
+  "cc": {"value": 1493, "page": 1, "snippet": "Cubic Capacity /Watts 1493", "confidence": 0.98},
+  "registration_number": {"value": "HR-26-FB-8239", "page": 1, "snippet": "Registration No HR-26-FB-8239", "confidence": 0.9},
+  "rto_code": {"value": "HR-26", "page": 1, "snippet": "Registration No HR-26-FB-8239 / RTO GURGAON", "confidence": 0.92},
+  "rto_location": {"value": "GURGAON", "page": 1, "snippet": "RTO GURGAON", "confidence": 0.97},
+  "manufacture_year": {"value": 2023, "page": 1, "snippet": "Year of Manufacture 2023", "confidence": 0.97},
+  "registration_year": {"value": null, "page": null, "snippet": "", "confidence": 0.0},
+  "body_type": {"value": "SUV", "page": 1, "snippet": "Body Type SUV", "confidence": 0.95},
+  "seating_capacity": {"value": 7, "page": 1, "snippet": "Seats 7", "confidence": 0.95},
+  "ncb_percent": {"value": 25, "page": 1, "snippet": "NCB 25% in the summary box; the OD premium calculation line shows 'No Claim Bonus (35%)' -- figures disagree", "confidence": 0.5},
+  "zero_depreciation": {"value": true, "page": 1, "snippet": "Zero Depreciation (IRDAN125A0021V01201415) 1853 under Add on Coverages", "confidence": 0.95},
+  "premium": {
+    "od_premium": {"value": 8053, "page": 1, "snippet": "Net Own Damage Premium (a) 8053", "confidence": 0.95},
+    "tp_premium": {"value": 3416, "page": 1, "snippet": "Basic Third Party Liability 3416", "confidence": 0.95},
+    "net_premium": {"value": 11869, "page": 1, "snippet": "Total Package Premium (a+b) 11869", "confidence": 0.9},
+    "total_premium": {"value": 14005, "page": 1, "snippet": "Total Premium 14005", "confidence": 0.9}
+  }
+}

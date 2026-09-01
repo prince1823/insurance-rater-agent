@@ -1,0 +1,26 @@
+{
+  "_note": "Hand-verified extraction payload for the supplied Reliance comprehensive sample.",
+  "insurer": {"value": "Reliance General Insurance Company Limited", "page": 2, "snippet": "Reliance Private Car Package Policy- Schedule", "confidence": 0.99},
+  "previous_insurer": {"value": null, "page": null, "snippet": "no previous-insurer field printed on the schedule", "confidence": 0.0},
+  "business_type": {"value": null, "page": null, "snippet": "not stated; NCB 25% implies a prior claim-free policy exists", "confidence": 0.0},
+  "policy_type": {"value": "comprehensive", "page": 2, "snippet": "Reliance Private Car Package Policy; Own Damage - Section I and Liability - Section II both present", "confidence": 0.98},
+  "make": {"value": "RENAULT", "page": 2, "snippet": "Make / Model / Variant RENAULT KWID 1.0 RXT O", "confidence": 0.97},
+  "model": {"value": "KWID 1.0 RXT O", "page": 2, "snippet": "RENAULT KWID 1.0 RXT O", "confidence": 0.95},
+  "fuel": {"value": "petrol", "page": null, "snippet": "fuel not explicitly printed; Renault Kwid 1.0 is petrol and CNG/LPG Kit value is 0.00", "confidence": 0.6},
+  "cc": {"value": 999, "page": 2, "snippet": "CC / HP 999", "confidence": 0.97},
+  "registration_number": {"value": "UP16CS5830", "page": 2, "snippet": "Registration No. UP16CS5830", "confidence": 0.85},
+  "rto_code": {"value": "UP-16", "page": 2, "snippet": "RTO Location UTTAR PRADESH - Noida; Registration No. UP16CS5830", "confidence": 0.9},
+  "rto_location": {"value": "UTTAR PRADESH - Noida", "page": 2, "snippet": "RTO Location UTTAR PRADESH - Noida", "confidence": 0.95},
+  "manufacture_year": {"value": 2020, "page": 2, "snippet": "Mfg. Month & Year OCT-2020", "confidence": 0.95},
+  "registration_year": {"value": null, "page": null, "snippet": "", "confidence": 0.0},
+  "body_type": {"value": null, "page": null, "snippet": "", "confidence": 0.0},
+  "seating_capacity": {"value": 5, "page": 2, "snippet": "Seating Capacity Including Driver 5", "confidence": 0.9},
+  "ncb_percent": {"value": 25, "page": 2, "snippet": "Less Deduct 25 % for NCB -350.01", "confidence": 0.95},
+  "zero_depreciation": {"value": true, "page": 2, "snippet": "Nil Depreciation listed under Add on Cover/s Opted", "confidence": 0.85},
+  "premium": {
+    "od_premium": {"value": 4714, "page": 2, "snippet": "TOTAL OWN DAMAGE PREMIUM 4,714.00", "confidence": 0.9},
+    "tp_premium": {"value": 2094, "page": 2, "snippet": "Basic Liability (TPPD 1) 2,094.00", "confidence": 0.92},
+    "net_premium": {"value": 7233, "page": 2, "snippet": "TOTAL PACKAGE PREMIUM (Sec I + II + III) 7,233.00", "confidence": 0.85},
+    "total_premium": {"value": 8535, "page": 2, "snippet": "TOTAL PREMIUM PAYABLE 8,535.00", "confidence": 0.9}
+  }
+}
