@@ -185,6 +185,10 @@ committed rulepacks still match the source grids.
 
 ## Deployment (Supabase + Render + Vercel — all free tier)
 
+> **OpenRouter credits:** `gpt-4o-mini` vision calls are not free. Add a few dollars of
+> credit at <https://openrouter.ai/settings/credits> or extraction returns `402 Payment
+> Required`. The deterministic resolver and the `?fixture=` demo path work without it.
+
 ### 1. Supabase (persistent storage)
 
 1. Create a project at <https://supabase.com>.
