@@ -20,6 +20,15 @@ _RESOLVERS = {
 DRIVER_FIELDS = ["insurer", "rto_code", "fuel", "cc", "policy_type"]
 
 
+def _year_from_text(val) -> int | None:
+    import re
+
+    if val is None:
+        return None
+    m = re.search(r"(19|20)\d{2}", str(val))
+    return int(m.group(0)) if m else None
+
+
 def detect_insurer(facts: PolicyFacts) -> tuple[str | None, float, str]:
     name = N._canon_insurer(str(facts.insurer.value or "")) or ""
     src = N._canon_insurer(facts.source_file.replace("-", " ").replace("_", " ")) or ""
@@ -41,9 +50,23 @@ def detect_insurer(facts: PolicyFacts) -> tuple[str | None, float, str]:
 def build_input(facts: PolicyFacts) -> ResolvedInput:
     v = lambda fv: fv.value if fv.is_present() else None
     fuel = N.norm_fuel(v(facts.fuel))
-    rto_code = N.norm_rto_code(v(facts.rto_code)) or N.norm_rto_code(v(facts.registration_number))
+
+    # RTO code: the registration number's prefix is structured and reliable; the
+    # LLM's free-form rto_code field is flaky on scans. Prefer the reg-derived
+    # value, fall back to the LLM value, and flag a mismatch as a weak fact.
+    reg_rto = N.norm_rto_code(v(facts.registration_number))
+    llm_rto = N.norm_rto_code(v(facts.rto_code))
+    rto_code = reg_rto or llm_rto
+    rto_mismatch = bool(reg_rto and llm_rto and reg_rto != llm_rto)
+    if rto_mismatch:
+        facts.notes.append(
+            f"RTO code disagreement: registration number implies {reg_rto}, "
+            f"extracted rto_code field said {llm_rto}; using {reg_rto}."
+        )
+
     myear = N.to_int(v(facts.manufacture_year))
-    ryear = N.to_int(v(facts.registration_year))
+    ryear = N.to_int(v(facts.registration_year)) or _year_from_text(v(facts.registration_year)) \
+        or _year_from_text(facts.registration_year.evidence.snippet)
     age = N.to_int(v(facts.vehicle_age_years)) or N.vehicle_age_years(myear, ryear)
 
     has_od = facts.premium.od_premium.is_present()
@@ -56,6 +79,8 @@ def build_input(facts: PolicyFacts) -> ResolvedInput:
         fv = getattr(facts, f, None)
         if fv is not None and fv.is_present() and fv.evidence.confidence < DRIVER_FACT_CONF_FLOOR:
             weak.append(f)
+    if rto_mismatch and "rto_code" not in weak:
+        weak.append("rto_code")
 
     return ResolvedInput(
         insurer=v(facts.insurer),

@@ -46,7 +46,11 @@ def norm_rto_code(raw: str | None) -> str | None:
         return None
     s = str(raw).upper().strip()
     s = s.replace(" ", "").replace("-", "")
-    m = re.match(r"^([A-Z]{2})(\d{1,2}[A-Z]?)", s)
+    m = re.match(r"^([A-Z]{2})(\d{2})", s)          # standard: 2 letters + 2 digits
+    if not m:
+        m = re.match(r"^([A-Z]{2})(\d[A-Z])", s)    # Delhi style: 1 digit + 1 letter (DL-9C)
+    if not m:
+        m = re.match(r"^([A-Z]{2})(\d)", s)         # 2 letters + 1 digit
     if not m:
         return None
     return f"{m.group(1)}-{m.group(2)}"

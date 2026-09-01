@@ -65,6 +65,7 @@ def test_hdfc_rejects_standalone_tp():
 def test_tata_multi_column_state_without_city_is_ambiguous():
     p = payload("pvt-car-satp-tata-aig")
     p["rto_code"] = {"value": "UP-32", "confidence": 0.9}
+    p["registration_number"] = {"value": "UP32AB1234", "confidence": 0.9}
     p["rto_location"] = {"value": "UTTAR PRADESH", "confidence": 0.9}
     out = run(p)
     assert out["status"] == "ambiguous"

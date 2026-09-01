@@ -14,3 +14,4 @@ blobs/
 local.db
 *.db
 blobs/
+rateragent/backend/.env

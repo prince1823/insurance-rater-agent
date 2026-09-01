@@ -34,8 +34,12 @@ Rules:
   "standalone_tp" for Liability Only / SATP / Act-only; "standalone_od" for SAOD.
 - business_type: "renewal" if previous insurer == current insurer; "rollover" if a different
   previous insurer is named; "new" if explicitly new/no previous policy; else null.
-- rto_code: the registration-mark area code like "HR-26", "UP-16", "DL-9C" (letters + up to 2
-  digits, optionally a letter). rto_location: the city/state text printed for the RTO.
+- registration_number: the full vehicle registration mark exactly as printed, e.g. "UP78FZ1372",
+  "DL 9C AB 2893", "HR-26-FB-8239". Read it digit by digit; do not normalise.
+- rto_code: derive it from registration_number = its first two letters + the immediately following
+  1-2 digits (and a trailing letter if present), e.g. UP78FZ1372 -> "UP-78", DL 9C AB 2893 ->
+  "DL-9C", HR-26-FB-8239 -> "HR-26". NEVER infer the code from the RTO office city name.
+- rto_location: the city/state text printed next to "RTO" / "RTO Location".
 - cc: integer engine cubic capacity. ncb_percent: the No Claim Bonus % applied to THIS policy's
   OD premium (if the schedule shows two different NCB figures, use the one in the premium
   calculation and note the discrepancy in the snippet).
