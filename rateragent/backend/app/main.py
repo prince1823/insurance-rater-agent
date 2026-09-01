@@ -33,12 +33,21 @@ def _startup() -> None:
 
 @app.get("/health")
 def health() -> dict:
+    k = settings.supabase_service_key
     return {
         "status": "ok",
         "llm_configured": settings.llm_configured,
         "model": settings.openrouter_model,
         "storage": "supabase" if settings.use_supabase_storage else "local",
         "database": "postgres" if settings.database_url else "sqlite",
+        "diag": {
+            "supabase_url_ok": settings.supabase_url.startswith("https://") and settings.supabase_url.endswith(".supabase.co"),
+            "service_key_len": len(k),
+            "service_key_ascii": k.isascii(),
+            "service_key_dots": k.count("."),
+            "service_key_head": k[:10],
+            "service_key_tail": k[-6:],
+        },
     }
 
 

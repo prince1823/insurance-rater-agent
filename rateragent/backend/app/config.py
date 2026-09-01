@@ -43,8 +43,12 @@ class Settings:
     sqlite_path: str = os.getenv("SQLITE_PATH", str(BACKEND_DIR / "local.db"))
 
     # Supabase Storage (object store for uploaded PDFs).
-    supabase_url: str = os.getenv("SUPABASE_URL", "").strip()
-    supabase_service_key: str = os.getenv("SUPABASE_SERVICE_KEY", "").strip()
+    supabase_url: str = os.getenv("SUPABASE_URL", "").strip().strip('"').strip("'").rstrip("/")
+    # tolerate stray whitespace / zero-width chars / wrapping quotes from env editors
+    supabase_service_key: str = "".join(
+        c for c in os.getenv("SUPABASE_SERVICE_KEY", "").strip().strip('"').strip("'")
+        if c.isprintable() and not c.isspace()
+    )
     supabase_bucket: str = os.getenv("SUPABASE_BUCKET", "policy-pdfs")
     # Local blob dir used when Supabase Storage is not configured.
     local_blob_dir: str = os.getenv("LOCAL_BLOB_DIR", str(BACKEND_DIR / "blobs"))
