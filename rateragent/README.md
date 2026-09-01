@@ -10,7 +10,10 @@ an answer.
 Built for the Vaatun "Solve to Join" challenge.
 
 **Live:** frontend <https://insurance-rater-agent.vercel.app> · API <https://insurance-rater-agent-dyi0.onrender.com>
-(Render free tier sleeps when idle — the first request may take ~1 min to wake.)
+(Render free tier sleeps when idle — the first request may take ~1 min to wake. The deployed
+instance uses a **free** extraction model whose accuracy on arbitrary scans is not yet
+production-grade — see *Known limitations*; a stronger model is a config change, not a code
+change. The UI is a functional **v1**.)
 
 ---
 
@@ -275,6 +278,19 @@ app degrades to a local SQLite file + local blob dir — used only for tests and
 
 ## Known limitations & next steps
 
+- **Extraction model.** The deployed instance runs the **free** `minimax/minimax-m3:free`
+  vision model. It reads the four supplied samples correctly, but on arbitrary real-world
+  scans its accuracy is **not yet production-grade** — it can misread a digit in an RTO code,
+  a CC value or a premium figure. Pointing `OPENROUTER_MODEL` at a stronger model (GPT-5 /
+  GPT-4o / Claude / Gemini Pro-class) materially improves extraction reliability with **no
+  code change**; the deterministic resolver and the confidence-gating around weak fields are
+  unchanged. A double-pass / self-consistency extraction and field-level re-prompting are the
+  next steps regardless of model.
+- **UI is v1.** Functional and complete for the workflow (upload, history, rate cards, facts
+  table, decision-trace timeline, source-PDF page deep-links), but intentionally minimal.
+  A v2 pass would add: side-by-side PDF ↔ citation highlighting, filter/search over run
+  history, an "override a fact and re-resolve" flow, export (PDF/CSV) of a result, and
+  responsive/mobile layout polish.
 - **HDFC ERGO grid is hand-transcribed** from the scanned 2-page rate card (page citations
   retained). Direct table parsing was too unreliable; a `pdfplumber` parser with a
   transcription cross-check is the obvious follow-up.
